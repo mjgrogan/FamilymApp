@@ -112,6 +112,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:onClick="Register_mthd"
         android:text="Register"
         app:layout_constraintEnd_toEndOf="@+id/etMobile"
         app:layout_constraintHorizontal_bias="0.459"
@@ -121,15 +122,28 @@
         app:layout_constraintTop_toBottomOf="@+id/etMobile" />
 
     <Button
-        android:id="@+id/btnGoToMain"
+        android:id="@+id/btnGoToQuickStartGuide"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Simulate Register"
+        android:onClick="QuickStartGuide_mthd"
+        android:text="Go to Quick Start Guide"
         app:layout_constraintEnd_toEndOf="@+id/btnRegister"
         app:layout_constraintStart_toStartOf="@+id/btnRegister"
         app:layout_constraintTop_toBottomOf="@+id/btnRegister" />
+
+    <TextView
+        android:id="@+id/txtNeedHelp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:onClick="NeedHelp_mthd"
+        android:text="Need Help?"
+        android:textColor="@android:color/holo_orange_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

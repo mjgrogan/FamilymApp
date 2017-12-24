@@ -22,7 +22,8 @@
         <activity android:name=".Locations" />
         <activity android:name=".Help" />
         <activity android:name=".Register" />
-        <activity android:name=".Emergency"></activity>
+        <activity android:name=".Emergency" />
+        <activity android:name=".QuickStartGuide"></activity>
     </application>
 
 </manifest>
