@@ -62,18 +62,12 @@ public class SignIn extends AppCompatActivity {
         }
 
         if(isUsernameValid && isPasswordValid) {
-            Toast toastokay = Toast.makeText(getApplicationContext(), "Both are okay", Toast.LENGTH_SHORT);
-            toastokay.show();
+            String username = Username_et.getText().toString();
+            String password = Password_et.getText().toString();
+            String type = "login";
+            BackgroundWorker backgroundWorker = new BackgroundWorker(this);
+            backgroundWorker.execute(type, username, password);
         }
-
-
-        Toast toast = Toast.makeText(getApplicationContext(), "Test PHP Sign In Script", Toast.LENGTH_SHORT);
-        toast.show();
-
-
-
-
-
     }
 
     /** Called when the user taps the "Go To Main Activity" button */

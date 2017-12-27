@@ -4,10 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/black"
     tools:context="quitessence.www.familymapp.Register">
 
+    <ImageView
+        android:id="@+id/imgBanner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/img_bwfmapp_bnr" />
+
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/txtRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -18,132 +29,231 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/etUsername"
+    <TextView
+        android:id="@+id/txtNeedHelp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:backgroundTint="@android:color/holo_orange_dark"
-        android:ems="10"
-        android:hint="Username"
-        android:inputType="textPersonName"
+        android:onClick="NeedHelp_mthd"
+        android:text="Need Help?"
         android:textColor="@android:color/holo_orange_dark"
+        app:layout_constraintBottom_toBottomOf="@+id/imgBanner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgIconUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/tilFamilyName"
+        app:layout_constraintEnd_toStartOf="@+id/tilUsername"
+        app:layout_constraintTop_toTopOf="@+id/tilUsername"
+        app:srcCompat="@drawable/ic_user" />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/tilUsername"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:hint="Username"
+        android:textColorHint="@android:color/holo_orange_dark"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgBanner">
+
+        <EditText
+            android:id="@+id/etUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/holo_orange_dark"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:maxLength="20"
+            android:textColor="@android:color/holo_orange_dark"
+            tools:layout_editor_absoluteX="24dp"
+            tools:layout_editor_absoluteY="308dp" />
+    </android.support.design.widget.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/imgIconFamily"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/tilPassword"
+        app:layout_constraintEnd_toStartOf="@+id/tilFamilyName"
+        app:layout_constraintTop_toTopOf="@+id/tilFamilyName"
+        app:srcCompat="@drawable/ic_family" />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/tilFamilyName"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:hint="FamilyName"
         android:textColorHint="@android:color/holo_orange_dark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/tilUsername">
 
-    <EditText
-        android:id="@+id/etFamilyName"
+        <EditText
+            android:id="@+id/etFamilyName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/holo_orange_dark"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:maxLength="20"
+            android:textColor="@android:color/holo_orange_dark"
+            tools:layout_editor_absoluteX="225dp"
+            tools:layout_editor_absoluteY="315dp" />
+    </android.support.design.widget.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/imgIconPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/tilConfirmPassword"
+        app:layout_constraintEnd_toStartOf="@+id/tilPassword"
+        app:layout_constraintTop_toTopOf="@+id/tilPassword"
+        app:srcCompat="@drawable/ic_lock" />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/tilPassword"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
         android:backgroundTint="@android:color/holo_orange_dark"
-        android:ems="10"
-        android:hint="Family Name"
-        android:inputType="textPersonName"
-        android:textColor="@android:color/holo_orange_dark"
         android:textColorHint="@android:color/holo_orange_dark"
-        app:layout_constraintEnd_toEndOf="@+id/etUsername"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/etUsername"
-        app:layout_constraintTop_toBottomOf="@+id/etUsername" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tilFamilyName"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@android:color/holo_orange_dark">
 
-    <EditText
-        android:id="@+id/etPassword"
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/holo_orange_dark"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="text|textPassword"
+            android:maxLength="20"
+            android:textColor="@android:color/holo_orange_dark"
+            android:textColorHint="@android:color/holo_orange_dark"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="336dp" />
+    </android.support.design.widget.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/imgIconConfirmPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="@+id/tilConfirmPassword"
+        app:layout_constraintEnd_toStartOf="@+id/tilConfirmPassword"
+        app:layout_constraintTop_toTopOf="@+id/tilConfirmPassword"
+        app:srcCompat="@drawable/ic_lock" />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/tilConfirmPassword"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
         android:backgroundTint="@android:color/holo_orange_dark"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:textColor="@android:color/holo_orange_dark"
         android:textColorHint="@android:color/holo_orange_dark"
-        app:layout_constraintEnd_toEndOf="@+id/etFamilyName"
-        app:layout_constraintStart_toStartOf="@+id/etFamilyName"
-        app:layout_constraintTop_toBottomOf="@+id/etFamilyName" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tilPassword"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@android:color/holo_orange_dark">
 
-    <EditText
-        android:id="@+id/etConfirmPassword"
+        <EditText
+            android:id="@+id/etConfirmPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/holo_orange_dark"
+            android:ems="10"
+            android:hint="Confirm Password"
+            android:inputType="text|textPassword"
+            android:maxLength="20"
+            android:textColor="@android:color/holo_orange_dark"
+            tools:layout_editor_absoluteX="153dp"
+            tools:layout_editor_absoluteY="439dp" />
+    </android.support.design.widget.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/imgIconMobile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:backgroundTint="@android:color/holo_orange_dark"
-        android:ems="10"
-        android:hint="Confirm Password"
-        android:inputType="textPassword"
-        android:textColor="@android:color/holo_orange_dark"
-        android:textColorHint="@android:color/holo_orange_dark"
-        app:layout_constraintEnd_toEndOf="@+id/etPassword"
-        app:layout_constraintStart_toStartOf="@+id/etPassword"
-        app:layout_constraintTop_toBottomOf="@+id/etPassword" />
+        app:layout_constraintBottom_toBottomOf="@+id/tilMobile"
+        app:layout_constraintEnd_toStartOf="@+id/tilMobile"
+        app:layout_constraintTop_toTopOf="@+id/tilMobile"
+        app:srcCompat="@drawable/ic_mobile" />
 
-    <EditText
-        android:id="@+id/etMobile"
-        android:layout_width="wrap_content"
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/tilMobile"
+        android:layout_width="240dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:backgroundTint="@android:color/holo_orange_dark"
-        android:ems="10"
+        android:layout_marginStart="24dp"
         android:hint="Mobile"
-        android:inputType="textPersonName"
-        android:textColor="@android:color/holo_orange_dark"
         android:textColorHint="@android:color/holo_orange_dark"
-        app:layout_constraintEnd_toEndOf="@+id/etConfirmPassword"
-        app:layout_constraintStart_toStartOf="@+id/etConfirmPassword"
-        app:layout_constraintTop_toBottomOf="@+id/etConfirmPassword" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tilConfirmPassword">
+
+        <EditText
+            android:id="@+id/etMobile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/holo_orange_dark"
+            android:ems="10"
+            android:inputType="phone"
+            android:maxLength="15"
+            android:textColor="@android:color/holo_orange_dark"
+            tools:layout_editor_absoluteX="134dp"
+            tools:layout_editor_absoluteY="460dp" />
+    </android.support.design.widget.TextInputLayout>
 
     <Button
         android:id="@+id/btnRegister"
-        android:layout_width="wrap_content"
+        android:layout_width="190dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:background="@drawable/custom_orange_btn"
         android:onClick="Register_mthd"
         android:text="Register"
-        app:layout_constraintEnd_toEndOf="@+id/etMobile"
-        app:layout_constraintHorizontal_bias="0.459"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/etMobile"
-        app:layout_constraintTop_toBottomOf="@+id/etMobile" />
+        app:layout_constraintEnd_toEndOf="@+id/tilMobile"
+        app:layout_constraintStart_toStartOf="@+id/imgIconMobile"
+        app:layout_constraintTop_toBottomOf="@+id/tilMobile" />
 
     <Button
         android:id="@+id/btnGoToQuickStartGuide"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:onClick="QuickStartGuide_mthd"
         android:text="Go to Quick Start Guide"
         app:layout_constraintEnd_toEndOf="@+id/btnRegister"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="@+id/btnRegister"
         app:layout_constraintTop_toBottomOf="@+id/btnRegister" />
-
-    <TextView
-        android:id="@+id/txtNeedHelp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:onClick="NeedHelp_mthd"
-        android:text="Need Help?"
-        android:textColor="@android:color/holo_orange_dark"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
